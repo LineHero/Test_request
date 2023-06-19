@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		body {
+			width : 100%;
+		}
+	
+		h1 {
+			text-align : center;
+		}
+		
+		div {
+			margin : 0 auto;
+			text-align: center;
+		}
+		
+		#loginForm div {
+			float : left;
+			width : 33%;
+			height : 80px;
+			line-height : 200%;
+		}
+		
+	</style>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script>
+	$(document).ready(function() {
+		$('#yes').click(function(e){
+			var id = $('#id').val();
+			var pw = $('#password').val();
+			
+			if(id.length == 0) {
+				alert("아이디를 입력해 주세요");
+				e.preventDefault();
+			}
+			
+			if(pw.length == 0) {
+				alert("비밀번호를 입력해 주세요");
+				e.preventDefault();
+			}
+		});
+		
+		$('#clear').click(function(e){
+			$('#id').val("");
+			$('#password').val("");
+		});
+	});
+	</script>
+</head>
+<body>
+	<h1>로그인</h1>
+	<hr>
+	<div id="loginForm" style="height:80px;">
+		<div>로그인<br>비밀번호</div>
+		<div style="text-align: center;">
+		<input id="id" type="text"><br>
+		<input id="password" type="password"></div>
+		<div></div>
+	</div>
+	
+	<div style="height:30px;">
+		<span><input id="yes" type="submit" value = "로그인"></span>
+		&nbsp;&nbsp;&nbsp;
+		<span><input id="clear" type="reset" value = "취 소"></span>
+	</div>
+</body>
+</html>
